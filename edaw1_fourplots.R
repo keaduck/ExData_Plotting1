@@ -1,0 +1,16 @@
+## Exploratory Data Analysis
+## Week 1 project
+## Kea Duckenfield
+
+## Script 5: create PNG format set of four plots
+
+png("C:/Users/kea/Documents/coursera/eda/week1/plots/set_of_four.png")
+par(mfrow = c(2,2))
+with(wk1sub, plot(Date_Time, Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)"))
+with(wk1sub, plot(Date_Time, Voltage, type = "l", xlab = "datetime", ylab = "Voltage"))
+with(wk1sub, plot(Date_Time, Sub_metering_1, type = "l", xlab = "", ylab = "Energy sub metering"))
+with(wk1sub, lines(Date_Time, Sub_metering_2, col = "red"))
+with(wk1sub, lines(Date_Time, Sub_metering_3, col = "blue"))
+legend("topright", title = "Legend", c("Sub-metering 1", "Sub-metering 2", "Sub-metering 3"), lty = c(1,1,1), lwd = c(2,2,2), col = c("black", "red", "blue"))
+with(wk1sub, plot(Date_Time, Global_reactive_power, type = "l", xlab = "datetime", ylab = "Global reactive power"))
+dev.off()
